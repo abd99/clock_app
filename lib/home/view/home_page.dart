@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
         },
         label: Text('Add Alarm'),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
