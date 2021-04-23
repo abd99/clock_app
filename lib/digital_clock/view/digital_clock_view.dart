@@ -31,7 +31,7 @@ class _DigitalClockState extends State<DigitalClock> {
         return Text(
           "${getSystemTime()}",
           style: Theme.of(context).textTheme.headline3.copyWith(
-                color: Colors.blue.shade900,
+                color: Colors.black,
                 fontWeight: FontWeight.w700,
               ),
           textAlign: TextAlign.center,

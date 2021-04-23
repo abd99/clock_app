@@ -1,5 +1,6 @@
-import 'package:clock_app/digital_clock/digital_clock.dart';
+import 'package:clock_app/clock/clock.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -22,7 +23,10 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              DigitalClock(),
+              ChangeNotifierProvider(
+                create: (context) => ClockPreference(),
+                child: ClockView(),
+              ),
             ],
           ),
         ),
