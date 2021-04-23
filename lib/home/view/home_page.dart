@@ -122,15 +122,17 @@ class _HomePageState extends State<HomePage> {
               initialTime: TimeOfDay.now(),
             );
           }
-          final _alarmTime = AlarmTime(
-            year: _selectedDate.year,
-            month: _selectedDate.month,
-            day: _selectedDate.day,
-            hour: _selectedTime.hour,
-            minute: _selectedTime.minute,
-          );
-          await dbController.saveAlarm(_alarmTime);
-          retrieveAlarms();
+          if (_selectedDate != null && _selectedTime != null) {
+            final _alarmTime = AlarmTime(
+              year: _selectedDate.year,
+              month: _selectedDate.month,
+              day: _selectedDate.day,
+              hour: _selectedTime.hour,
+              minute: _selectedTime.minute,
+            );
+            await dbController.saveAlarm(_alarmTime);
+            retrieveAlarms();
+          }
         },
         label: Text('Add Alarm'),
       ),
